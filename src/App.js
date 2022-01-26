@@ -20,7 +20,7 @@ function App(props) {
 
   // there fore we can have 3 types of useEffect
   //1.by default we cont provide any thing like this '})' and it will run after every  render
-  //2.w can give simple empty array like this },[]) and it will run only one time
+  //2.we can give simple empty array like this equvalant to compDidMount },[]) and it will run only one time
   //3. componentDidUpdata alternative },[userId]) whenever the userId is update or changing the useEffect will be call again
 
   /************adding event listner nothing with life comp */
