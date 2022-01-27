@@ -3,9 +3,14 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 
 /***********custom hooks************* */
+/* *************/
+//  1.for custom hook it must start wth %%"use"%% like useFormInput
+// 2. there should hook inside that custom hook function like 'useState'
 function useFormInput(initialValue) {
   // creating custom hooks
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
+  const [value, setValue] = useState(initialValue);
+
   function handleChange(e) {
     setValue(e.target.value);
   }
@@ -14,9 +19,12 @@ function useFormInput(initialValue) {
     onChange: handleChange,
   };
 }
+/********inportant rules regarding hooks */
+//1.we must call hook at the top most level of the function like const email = useFormInput(""); we have in th app function callingemail and password @ the top
+//2. we should not call hook ind=side foor loop of if condition or in nested loop or cond  beacause react lie on the call order of the hooks to keep track of the internal state and references
 function App() {
   // const [email,setEmail] = useState('');
-  // const [password,setPassword] = useState('');
+  // cons t [password,setPassword] = useState('');
   // function handleEmailChange(e){
   //   setEmail(e.target.value);
   // }
